@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        int P[n];
+        int minSoFar=prices[0];
+        int ans=0;
+        
+        for(int i=1;i<n;i++){
+            P[i] = prices[i] - minSoFar;
+            ans = max(P[i], ans);
+            minSoFar = min(prices[i], minSoFar);
+        }
+        
+        return ans;
+    }
+};
