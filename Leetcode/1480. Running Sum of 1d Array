@@ -1,0 +1,12 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        vector<int> cummulativeSumArray;
+        cummulativeSumArray.push_back(nums[0]);
+        for(int i=1;i<nums.size();i++){
+            cummulativeSumArray.push_back(cummulativeSumArray[i-1] + nums[i]);
+        }
+        return cummulativeSumArray;
+    }
+    
+};
