@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool increasingTriplet(vector<int>& nums) {
+        int size=nums.size();
+        int i=INT_MAX;
+        int j=INT_MAX;
+        int k=INT_MAX;
+        for(int var=0;var<size;var++){
+            if(nums[var] <= i){
+                i=nums[var];
+            }else if(nums[var] <= j){
+                j=nums[var];
+            }
+            else{
+                return true;
+             }   
+              
+        }
+        return false;
+        
+        
+    }
+};
